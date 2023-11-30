@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache';
 import React from 'react'
 
 const UsersPage = async () => {
@@ -6,8 +7,8 @@ const UsersPage = async () => {
         name:string;
     }
 
-    const apiRes=await fetch('https://jsonplaceholder.typicode.com/users')
-    const users:User[]=await apiRes.json();
+    const apiRes=await fetch('https://jsonplaceholder.typicode.com/users',{next:{revalidate:10}})
+    const users:User[]=await apiRes.json(); 
   return (
     <>
     <h1>Users</h1>
