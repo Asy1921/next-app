@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    // Replace 'YOUR_GITHUB_TOKEN' with your actual GitHub token
+    // Replace 'YOUR_GITHUB_TOKEN' with the actual GitHub token
     const response = await fetch('https://api.github.com/user/repos', {
       headers: {
         Authorization: 'process.env.YOUR_GITHUB_TOKEN',
